@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="home-content">
+    <h2>Welcome, {{ current_user.username }}!</h2>
+
+    <!-- Form for creating a chat room -->
+    <form action="{{ url_for('home') }}" method="post" class="room-form">
+        <button type="submit" name="create_room" class="btn">Create Chat Room</button>
+    </form>
+
+    <!-- Form for entering an existing chat room -->
+    <form action="{{ url_for('home') }}" method="post" class="room-form">
+        <label for="room_code">Enter Chat Room Code</label>
+        <input type="text" name="room_code" id="room_code" required>
+        <button type="submit" name="enter_room" class="btn">Enter Chat Room</button>
+    </form>
+
+</div>
+{% endblock %}
